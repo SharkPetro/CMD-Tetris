@@ -136,7 +136,7 @@ int main() {
 					messageTimer = 5;
 					score += showScoreMessage(0, messageScore).second;
 				}
-				levelUp()
+				levelUp();
 			}
 		}
 		if (getKeyType('F')) {
