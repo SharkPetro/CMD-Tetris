@@ -33,5 +33,5 @@ std::pair<bool, int> checkClearLine(int y);
 void moveTetrisLayers(int y);
 void tetrisLose();
 
-void levelUp();
+bool levelUp();
 std::pair<std::wstring, int> showScoreMessage(int action, int data);

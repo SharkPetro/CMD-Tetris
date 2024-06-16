@@ -125,7 +125,7 @@ int main() {
 			// GAME UPDATE
 			moveTetromino(x, y, LStickInput, tetromino);
 			elapsed += duration_cast<milliseconds>(delta).count();
-			if (elapsed >= 30 - speedLevel) {
+			if (elapsed >= 30 - (level)) {
 				elapsed = 0;
 				messageTimer--;
 				int a = removeClearedLines();
@@ -136,8 +136,11 @@ int main() {
 					messageTimer = 5;
 					score += showScoreMessage(0, messageScore).second;
 				}
-				levelUp();
+				levelUp()
 			}
+		}
+		if (getKeyType('F')) {
+			level++;
 		}
 		screen[nScreenWidth * nScreenHeight - 1] = '\0';
 		WriteConsoleOutputCharacterW(hConsole, screen, nScreenHeight * nScreenWidth, { 0, 0 }, &dwBytesWritten);

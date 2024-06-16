@@ -216,11 +216,13 @@ void tetrisLose() {
 	showString(L"GAME OVER", messageX+1, messageY+1);
 }
 
-void levelUp() {
+bool levelUp() {
 	if (linesCleared >= level * 10) {
 		linesCleared = 0;
 		level++;
+		return true;
 	}
+	return false;
 }
 
 std::pair<std::wstring, int> showScoreMessage(int action, int data) {
