@@ -20,6 +20,7 @@ int main() {
 	srand(time(0));
 	nScreenHeight = 44;
 	nScreenWidth = 30;
+	// you don't have to understand this yet, it's windows api shit and it's ass
 	screen = new wchar_t[nScreenHeight * nScreenWidth];
 	HANDLE hConsole = CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE, 0, NULL, CONSOLE_TEXTMODE_BUFFER, NULL);
 	HWND HWNDConsole = GetConsoleWindow();
@@ -29,6 +30,7 @@ int main() {
 	RECT ConsoleRect;
 	GetWindowRect(HWNDConsole, &ConsoleRect);
 	MoveWindow(HWNDConsole, ConsoleRect.left, ConsoleRect.top, (nScreenWidth+1)*16, (nScreenHeight+4)*12, TRUE);
+	// windows api shit end
 
 	
 	int x = 5;
